@@ -19,9 +19,21 @@ namespace HomeAssistant.Core.ViewModel
             IDialogService dialogService, 
             IErrorManagement errorManagement)
         {
-            DisplayManagement = displayManagement ?? throw new ArgumentNullException("displayManagement");
-            DialogService = dialogService ?? throw new ArgumentNullException("dialogService");
-            ErrorManagement = errorManagement ?? throw new ArgumentNullException("errorManagement");
+            if (displayManagement == null)
+            {
+                throw new ArgumentNullException("displayManagement");
+            }
+            if (dialogService == null)
+            {
+                throw new ArgumentNullException("dialogService");
+            }
+            if (errorManagement == null)
+            {
+                throw new ArgumentNullException("errorManagement");
+            }
+            DisplayManagement = displayManagement;//?? throw new ArgumentNullException("displayManagement");
+            DialogService = dialogService;// ?? throw new ArgumentNullException("dialogService");
+            ErrorManagement = errorManagement;//?? throw new ArgumentNullException("errorManagement");
 
             _generalRefreshStateErrorCommand = new RelayCommand(this.ErrorManagement, GeneralRefreshStateShowError);
             _generalRefreshStateReloadCommand = new RelayCommand(this.ErrorManagement, GeneralRefreshStateReload);

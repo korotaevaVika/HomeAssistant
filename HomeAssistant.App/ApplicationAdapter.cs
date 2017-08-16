@@ -34,7 +34,11 @@ namespace HomeAssistant.App
 
         public ApplicationAdapter(MainWindow mainWindow)
         {
-            _mainWindow = mainWindow ?? throw new ArgumentNullException("mainWindow");
+            if (mainWindow == null)
+            {
+                throw new ArgumentNullException("mainWindow");
+            }
+            _mainWindow = mainWindow;
             Content = "It's me - App adapter";
 
             _mainServiceContainer.RegisterInstance<IErrorManagement>(this, new ExternallyControlledLifetimeManager());

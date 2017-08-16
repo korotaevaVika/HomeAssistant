@@ -23,6 +23,14 @@
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Reports"/>
+                <MenuItem Header="Settings">
+                    <MenuItem Header="{DynamicResource Languages}" Command="{Binding ShowAccounterDataCommand}">
+                        <MenuItem Header="{DynamicResource RU_Language}" Command="{Binding ShowAccounterDataCommand}"/>
+                        <MenuItem Header="{DynamicResource EN_Language}" Command="{Binding ShowAccounterDataCommand}"/>
+                            <!--<MenuItem Header="Смены" Command="{Binding ShowFatBalanceShiftsCatalogCommand}"/>
+                        <MenuItem Header="Танки и линии" Command="{Binding ShowFatBalanceTanksCatalogCommand}"/>-->
+                    </MenuItem>
+                </MenuItem>
             </Menu>
             <Grid DataContext="{Binding ElementName=this, Path=MainContent}" >
                 <ContentPresenter Margin="0 30 0 0" Content="{Binding }"/>
