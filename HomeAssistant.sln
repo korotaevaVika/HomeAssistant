@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAssistant.App", "HomeAssistant.App\HomeAssistant.App.csproj", "{4AC013BE-C870-4B6A-B583-0B7BAE32C83C}"
 EndProject
@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExtLib", "ExtLib", "{BDBC62
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAssistant.Accounter", "HomeAssistant.Accounter\HomeAssistant.Accounter.csproj", "{C9A676D5-1438-4EC2-952A-34A0A2D2BE19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAssistant.Data", "HomeAssistant.Data\HomeAssistant.Data.csproj", "{F98E75B0-85B9-4449-94ED-EC7C74401905}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{C9A676D5-1438-4EC2-952A-34A0A2D2BE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9A676D5-1438-4EC2-952A-34A0A2D2BE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9A676D5-1438-4EC2-952A-34A0A2D2BE19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F98E75B0-85B9-4449-94ED-EC7C74401905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F98E75B0-85B9-4449-94ED-EC7C74401905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F98E75B0-85B9-4449-94ED-EC7C74401905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F98E75B0-85B9-4449-94ED-EC7C74401905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

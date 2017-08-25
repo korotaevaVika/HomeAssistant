@@ -9,6 +9,7 @@ namespace HomeAssistant.Core.ViewModel
         protected IDisplayManagement DisplayManagement { get; private set; }
         protected IDialogService DialogService { get; private set; }
         protected IErrorManagement ErrorManagement { get; private set; }
+        protected ISecurity Security { get; private set; }
 
         private readonly RelayCommand _generalRefreshStateErrorCommand;
         private readonly RelayCommand _generalRefreshStateReloadCommand;
@@ -17,6 +18,7 @@ namespace HomeAssistant.Core.ViewModel
         public ViewModelBase(
             IDisplayManagement displayManagement, 
             IDialogService dialogService, 
+            ISecurity security,
             IErrorManagement errorManagement)
         {
             if (displayManagement == null)
@@ -31,9 +33,14 @@ namespace HomeAssistant.Core.ViewModel
             {
                 throw new ArgumentNullException("errorManagement");
             }
+            //if (security == null)
+            //{
+            //    throw new ArgumentNullException("security");
+            //}
             DisplayManagement = displayManagement;//?? throw new ArgumentNullException("displayManagement");
             DialogService = dialogService;// ?? throw new ArgumentNullException("dialogService");
             ErrorManagement = errorManagement;//?? throw new ArgumentNullException("errorManagement");
+            Security = security;
 
             _generalRefreshStateErrorCommand = new RelayCommand(this.ErrorManagement, GeneralRefreshStateShowError);
             _generalRefreshStateReloadCommand = new RelayCommand(this.ErrorManagement, GeneralRefreshStateReload);

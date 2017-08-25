@@ -13,31 +13,79 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
 
-        <DockPanel LastChildFill="True">
-            <Menu DockPanel.Dock="Top" Background="Transparent">
-                <MenuItem Header="Accounter">
-                    <MenuItem Header="Data" Command="{Binding ShowAccounterDataCommand}">
-                        <!--<MenuItem Header="Смены" Command="{Binding ShowFatBalanceShiftsCatalogCommand}"/>
-                        <MenuItem Header="Танки и линии" Command="{Binding ShowFatBalanceTanksCatalogCommand}"/>-->
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="Reports"/>
-                <MenuItem Header="Settings">
-                    <MenuItem Header="{DynamicResource Languages}" Command="{Binding ShowAccounterDataCommand}">
-                        <MenuItem Header="{DynamicResource RU_Language}" Command="{Binding ShowAccounterDataCommand}"/>
-                        <MenuItem Header="{DynamicResource EN_Language}" Command="{Binding ShowAccounterDataCommand}"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <DockPanel LastChildFill="True" Grid.ColumnSpan="3">
+                <Menu DockPanel.Dock="Top" Background="Transparent">
+                    <MenuItem Header="Accounter">
+                        <MenuItem Header="Data" Command="{Binding ShowAccounterDataCommand}">
                             <!--<MenuItem Header="Смены" Command="{Binding ShowFatBalanceShiftsCatalogCommand}"/>
                         <MenuItem Header="Танки и линии" Command="{Binding ShowFatBalanceTanksCatalogCommand}"/>-->
+                        </MenuItem>
                     </MenuItem>
-                </MenuItem>
-            </Menu>
-            <Grid DataContext="{Binding ElementName=this, Path=MainContent}" >
-                <ContentPresenter Margin="0 30 0 0" Content="{Binding }"/>
-                <ContentControl Template="{StaticResource dialogControl}" DataContext="{Binding}"/>
-                <ContentControl Template="{StaticResource GeneralRefreshStateBorder}" DataContext="{Binding Content}"/>
-            </Grid>
+                    <MenuItem Header="Reports"/>
+                    <MenuItem Header="Settings">
+                        <MenuItem Header="{DynamicResource Languages}" Command="{Binding ShowAccounterDataCommand}">
+                            <MenuItem Header="{DynamicResource RU_Language}" Command="{Binding ShowAccounterDataCommand}"/>
+                            <MenuItem Header="{DynamicResource EN_Language}" Command="{Binding ShowAccounterDataCommand}"/>
+                            <!--<MenuItem Header="Смены" Command="{Binding ShowFatBalanceShiftsCatalogCommand}"/>
+                        <MenuItem Header="Танки и линии" Command="{Binding ShowFatBalanceTanksCatalogCommand}"/>-->
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource Settings}" Command="{Binding ShowSettingsCommand}"/>
 
-        </DockPanel>
+
+                    </MenuItem>
+                </Menu>
+                <Grid DataContext="{Binding ElementName=this, Path=MainContent}" >
+                    <ContentPresenter Margin="0 30 0 0" Content="{Binding }"/>
+                    <ContentControl Template="{StaticResource dialogControl}" DataContext="{Binding}"/>
+                    <ContentControl Template="{StaticResource GeneralRefreshStateBorder}" DataContext="{Binding Content}"/>
+                </Grid>
+
+            </DockPanel>
+            <Border Grid.Row="2" Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="Login" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="Password" VerticalAlignment="Center"/>
+                    <Button Margin="5"  Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="3" Content="Enter" HorizontalContentAlignment="Stretch"  HorizontalAlignment="Stretch"/>
+
+                    <TextBox Margin="5" Grid.Column="2" Grid.Row="1" Text="{Binding UserName, Mode=TwoWay}"/>
+                    <PasswordBox Margin="5" Grid.Column="2" Grid.Row="2"/>
+
+
+                </Grid>
+            </Border>
+        </Grid>
+
     </Border>
+
+
 </Window>

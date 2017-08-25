@@ -29,6 +29,7 @@ namespace HomeAssistant.App
 
         private readonly ICommand _showAccounterDataCommand;
         private readonly ICommand _closeDialogCommand;
+        private readonly ICommand _showSettingsCommand;
 
         private static Logger logger;
 
@@ -56,12 +57,13 @@ namespace HomeAssistant.App
             logger = LogManager.GetCurrentClassLogger();
 
             _showAccounterDataCommand = new RelayCommand(this, ShowAccounterData);
+            _showSettingsCommand = new RelayCommand(this, ShowSettings);
             _closeDialogCommand = new RelayCommand(this, CloseDialog);
 
         }
         private void CreateLoginContainer()
         {
-            //_loginServiceContainer = _mainServiceContainer.CreateChildContainer();
+            _loginServiceContainer = _mainServiceContainer.CreateChildContainer();
             //_loginServiceContainer.RegisterType<IProductCalculatorContext, ProductCalculatorContext>(new ContainerControlledLifetimeManager());
             //_loginServiceContainer.RegisterType<IProductCalculatorContextProvider, ProductCalculatorContextProvider>(new ContainerControlledLifetimeManager());
             //_loginServiceContainer.RegisterType<IProductCalculator, ProductCalculatorModel>(new ContainerControlledLifetimeManager());
@@ -192,5 +194,14 @@ namespace HomeAssistant.App
         {
             //ShowViewModel(typeof(AccounterDataViewModel), false, null);
         }
+
+        public ICommand ShowSettingsCommand { get { return _showSettingsCommand; } }
+        private void ShowSettings(object obj)
+        {
+            Settings win2 = new Settings();
+            win2.Show();
+            // ShowViewModel(typeof(SettingsViewModel), false, null);
+        }
+        
     }
 }

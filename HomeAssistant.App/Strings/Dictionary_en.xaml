@@ -6,5 +6,7 @@
     <system:String x:Key="Languages">Languages</system:String>
     <system:String x:Key="RU_Language">Russian</system:String>
     <system:String x:Key="EN_Language">English</system:String>
+    <system:String x:Key="Settings">Settings</system:String>
+    
 </ResourceDictionary>
 

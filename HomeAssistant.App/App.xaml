@@ -9,6 +9,8 @@
                 <ResourceDictionary 
                     Source="pack://application:,,,/HomeAssistant.Core;component/Resources/Resources.xaml"/>
                 <ResourceDictionary 
+                    Source="pack://application:,,,/HomeAssistant.App;component/Resources.xaml"/>
+                <ResourceDictionary 
                     Source="pack://application:,,,/HomeAssistant.App;component/Strings/Dictionary_en.xaml"/>
                 <ResourceDictionary 
                     Source="pack://application:,,,/HomeAssistant.App;component/Strings/Dictionary_ru.xaml"/>
